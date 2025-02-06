@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'hiddenapi.compat'
+    compileSdk 35
+    defaultConfig {
+        minSdk 33
+        targetSdk 35
+    }
+}
+
+dependencies {
+    compileOnly project(':hiddenapi:stubs')
+
+    implementation project(':hiddenapi:reflect')
+}
