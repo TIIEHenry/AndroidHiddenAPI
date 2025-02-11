@@ -15,7 +15,7 @@ public class PackageManagerCompat {
 
     public static boolean canUserUninstall(PackageManager packageManager, String packageName, UserHandle handle) {
         try {
-            return ReflectBuilder.from(PackageManager.class).method("canUserUninstall", String.class, UserHandle.class).invokeAs(packageManager, packageName, handle)
+            return ReflectBuilder.from(PackageManager.class).method("canUserUninstall", String.class, UserHandle.class).invokeAs(packageManager, packageName, handle);
         } catch (Exception e) {
             return false;
         }
