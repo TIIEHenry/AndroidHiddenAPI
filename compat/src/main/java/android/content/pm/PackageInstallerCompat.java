@@ -3,6 +3,8 @@ package android.content.pm;
 import hiddenapi.reflect.ReflectBuilder;
 
 public class PackageInstallerCompat {
+    public static final int INSTALL_ALLOW_TEST = 0x00000004;
+    public static final int INSTALL_FROM_ADB = 0x00000020;
     public static final String EXTRA_LEGACY_STATUS = "android.content.pm.extra.LEGACY_STATUS";
     public static final String ACTION_CONFIRM_INSTALL = "android.content.pm.action.CONFIRM_INSTALL";
 
@@ -17,5 +19,7 @@ public class PackageInstallerCompat {
                 return null;
             }
         }
+
+
     }
 }
