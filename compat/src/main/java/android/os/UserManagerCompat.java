@@ -25,9 +25,9 @@ public class UserManagerCompat {
         return null;
     }
 
-    public static int getUserRestrictionSource(UserManager mUserManager, String disallowInstallApps, UserHandle userHandle) {
+    public static int getUserRestrictionSource(UserManager userManager, String disallowInstallApps, UserHandle userHandle) {
         try {
-            return ReflectBuilder.from(UserManager.class).method("getUserRestrictionSource", String.class, UserHandle.class).invokeAs(disallowInstallApps, userHandle);
+            return ReflectBuilder.from(UserManager.class).method("getUserRestrictionSource", String.class, UserHandle.class).invokeAs(userManager, disallowInstallApps, userHandle);
         } catch (Exception e) {
             e.printStackTrace();
         }
